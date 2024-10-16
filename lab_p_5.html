@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Document Object</h1>
+<h2>The addEventListener() Method</h2>
+<p id="demo">red</p>
+<button id="abcd" oncontextmenu="">Color</button>
+<script>
+document.addEventListener("auxclick",myFunction)
+document.addEventListener("click",myFun)
+document.addEventListener("contextmenu",myFun1)
+function myFunction() {
+  document.body.style.backgroundColor="orange";
+}
+function myFun(){
+  alert("Left Click")
+}
+function myFun1(){
+  confirm("right Click")
+}
+</script>
+
+</body>
+</html>
