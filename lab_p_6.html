@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>DOM Methods</title>
+        
+    </head>
+    <script src="lab_p_6.js">
+        function changetxt(){
+            document.getElementById("chngtxt").textContent="GLA University Mathura";
+        }
+        
+        function make_visible(){
+            document.getElementById("hide_ele").style.display="block";
+        }
+        
+        
+    </script>
+    <body>
+        <h1 style="text-align: center;">part 1</h1>
+        <hr style="width: 100; border-color:black ; border-width: 2;">
+        <h3>1.</h3>
+        <p id="chngtxt">Hello World</p>
+        <button onclick="changetxt()">change the text</button>
+    </body>
+    <hr>
+    <h3>2.</h3>
+    <p>my name is sushant</p>
+    <button onclick="change_color()">change text color</button>
+    <hr>
+    <h3>3.</h3>
+    <p id="hide_ele">example to hide an element</p>
+    <button onclick="hide_ele()">hide the element</button>
+    
+    <h3>4.</h3>
+    <!-- <p id="do_visible" style="display: none;">this is an example to make element visible</p> -->
+    <button onclick="make_visible()">make element visible</button>
+
+    <hr>
+    <h3>5.</h3>
+    <img id="car_img" src="car_img.jpg" alt="car img" style="height: 200;">
+    <br><br><button onclick="change_img()">change image</button>
+    <br><br><br>
+    <hr style="border-color:darkolivegreen;">
+    <hr style="border-color: rgb(18, 137, 97);">
+    <h1 style="text-align: center;">Part 2 (using classes)</h1>
+    <hr style="width: 280; border-color:black ; border-width: 2;">
+    <br>
+    <hr>
+    <h3>1.</h3>
+    <p class="change_txt">hello World</p>
+    <p class="change_txt">example text foe changing using class</p>
+    <button onclick="change_txt_byclass()">change the above text.</button>
+
+    <hr>
+    <h3>2.</h3>
+    <div class="change_color" style="align-items: center; display: flex; justify-content: center;">
+        <feildset>
+            BOX 1
+        </feildset>
+    </div>
+    <br>
+    <div class="change_color" style="display: flex; justify-content: center;">BOX 2</div>
+    <button onclick="change_color_byclass()"> change color</button>
+    <br>
+    <hr>
+    
+
+    
+</html>
