@@ -72,9 +72,9 @@ function change_color_bytag(){
 }
 function hide_ele_bytag(){
     var item=document.getElementsByTagName("div3");
-    // for(var i=0;i<div.length;i++){
-        item.style.display="none";
-    // }
+    for(var i=0;i<item.length;i++){
+        item[i].style.display="none";
+    }
 }   
 
 function border_bytag(){
@@ -85,8 +85,8 @@ function border_bytag(){
 }
 
 function change_size_bytag(){
-    var ch_size=document.getElementsByTagName("div5");
+    var ch_size=document.getElementsByTagName("span");
     for(var i=0;ch_size.length;i++){
-        ch_size[i],style.fontSize="20px";
+        ch_size[i].style.fontSize="20px";
     }
 }
