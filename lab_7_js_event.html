@@ -13,7 +13,10 @@
         <hr style="background: #000; height:2px;">
         <h3></h3>
         <div style=" text-align: center; font-size: 30; text-decoration-color: aqua;" >
-            <p id="hover"> <strong> this is an example to cahnge color on mouse hober</strong></p>
+            <h3 id="hover">2. change coloe on hover</h3>
+            <p id="hover"> <strong> this is an example to cahnge color on mouse hover</strong></p>
+            <hr style="background: #000; height:2px;">
+            <p id="key_pressed">this is an example.</p>
         </div>
         <script>
             function click_event(){
@@ -27,10 +30,12 @@
             function white(){
                 document.getElementById("hover").style.color="black";
             }
-             document.getElementById("hover").addEventListener("mouseover",blue);
-             document.getElementById("hover").addEventListener("mouseleave",white);
+            document.getElementById("hover").addEventListener("mouseover",blue);
+            document.getElementById("hover").addEventListener("mouseleave",white);
 
-
+            function key_pressed(){
+                documnet.getElementById("key_pressed").alert("")
+            }
         </script>
         
     </body>
