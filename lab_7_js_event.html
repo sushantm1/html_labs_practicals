@@ -2,40 +2,84 @@
     <head>
         <title>Event listner.</title>
     </head>
+    <style>
+        #hover:hover{
+            color: blue;
+        }
+    </style>
     <body>
-        <h1 style="text-align: center;">JS Events</h1>
-        <hr style="background: #000; height: 2; width: 150px;">
-        <!-- hoizontal rule-->
-        <hr style="background: #000; height:2px;">
-        <h3>1. Click Event</h3>
-        <button id="button">click the button</button>
-        <!-- hoizontal rule-->
-        <hr style="background: #000; height:2px;">
-        <h3></h3>
-        <div style=" text-align: center; font-size: 30; text-decoration-color: aqua;" >
-            <h3 id="hover">2. change coloe on hover</h3>
+        <div>
+            <h1 style="text-align: center;">JS Events</h1>
+            <hr style="background: #000; height: 2; width: 150px;">
+            <!-- hoizontal rule-->
+            <hr style="background: #000; height:2px;">
+            <h3>1. Click Event</h3>
+            <button id="button">click the button</button>
+            <!-- hoizontal rule-->
+            <hr style="background: #000; height:2px;">
+            <h3></h3>
+            <!-- <input style=" text-align: center; font-size: 30; text-decoration-color: aqua;" > -->
+            <h3 id="hover">2. change color on hover</h3>
             <p id="hover"> <strong> this is an example to cahnge color on mouse hover</strong></p>
             <hr style="background: #000; height:2px;">
-            <p id="key_pressed">this is an example.</p>
+            <h3>3. key pressed on input box</h3>
+            <input id="key_pressed" type="text" placeholder="try to type something"></input>
+            <hr style="background: #000; height:2px;">
+            <h3>4. change paragraph text on double click.</h3>
+            <p id="text_change">double-click to change the text.</p>
+            <hr style="background: #000; height:2px;">
+            <h3>5. prevent a form to be submitted.</h3>
+            <form id="prevent_submit">
+                <input type="text" placeholder="enter your name">
+            </form>
+            <hr style="background: #000; height:2px;">
+            <h3>6. drag to change color.</h3>
+            <div id="drag" draggable="true" style="justify-content: center; width: 100px; height: 100px; background: green;">
+                example
+            </div>
+            <hr style="background: #000; height:2px;">
+            <h3>7. alert on checkbox status(checked or not).</h3>
+            <input type="checkbox" name="" id="checkbox">check me!...
+            
         </div>
         <script>
+            function drag1(){
+                document.getElementById("drag").style.backgroundColor="orange";
+            }
+            function drag2(){
+                document.getElementById("drag").style.backgroundColor="green";
+            }
+            document.getElementById("drag").addEventListener("dragstart",drag1);
+            document.getElementById("drag").addEventListener("dragleave",drag2);
+            function prevent_submit(Event){
+                event.preventDefault();
+                alert("form submission prevented")
+            }
+            document.getElementById("prevent_submit").addEventListener("submit",prevent_submit);
+            function text_change(){
+                document.getElementById("text_change").textContent="text has been changed, Lorem, ipsum dolor sit amet consectetur adipisicing elit";
+            }
+            document.getElementById("text_change").addEventListener("dblclick",text_change);
             function click_event(){
                 alert("button clicked.")
             }    
             document.getElementById("button").addEventListener('click',click_event);
             
-            function blue(){
-                document.getElementById("hover").style.color="#3f37c9";
+            function blue(){    
+                const data = document.getElementById("hover").style.color="#3f37c9";
             }
-            function white(){
+            function black(){
                 document.getElementById("hover").style.color="black";
             }
-            document.getElementById("hover").addEventListener("mouseover",blue);
-            document.getElementById("hover").addEventListener("mouseleave",white);
+            
+            // document.getElementById("hover").addEventListener("mouseover",blue);
+            // document.getElementById("hover").addEventListener("mouseleave",black);
 
             function key_pressed(){
-                documnet.getElementById("key_pressed").alert("")
-            }
+                alert("key was pressed");
+            }   
+            document.getElementById("key_pressed").addEventListener("keydown",key_pressed);                
+
         </script>
         
     </body>
