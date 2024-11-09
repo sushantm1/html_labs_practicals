@@ -40,9 +40,22 @@
             <hr style="background: #000; height:2px;">
             <h3>7. alert on checkbox status(checked or not).</h3>
             <input type="checkbox" name="" id="checkbox">check me!...
+            <hr style="background: #000; height:2px;">
+            <h3>8. resize event example.</h3>
+
             
         </div>
         <script>
+            function window_resize(){
+                if(window.innerWidth<500){
+                    alert("windows size is smaller than 500px.");
+                }
+            }
+            window.addEventListener("resize",window_resize);
+            function checkbox(){
+                alert("checkbox statue changed");
+            }
+            document.getElementById("checkbox").addEventListener("change",checkbox);
             function drag1(){
                 document.getElementById("drag").style.backgroundColor="orange";
             }
