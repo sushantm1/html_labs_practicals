@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function load(){
+            //alert "loading"
+            // create a new XMLHttpsRequest object
+            var request =new XMLHttpRequest();
+            // open a get request fot aboput html
+            request.open("GET","lab_p_6.1.html");
+            // set up a function to handle the response
+            request.onreadystatechange=function(){
+                // this function wil called whenever the readystate changes
+                if(this.readyState==4 && this.status==200){
+                    // if the requesrt is complete and successful
+                    console.log(this.responseText);
+                    document.getElementById("container").innerHTML= this.response;
+                }
+            };
+            //send the request 
+        request.send();
+    }
+
+    </script>
+</head>
+<body>
+    <h2>Example for AJAX.</h2>
+    <p>this is an example for AJAX</p>
+    <div>
+        <a href="about.html">about</a>
+        <button onclick="load()">About</button>
+        <div id="container"></div>
+    
+    </div>
+</body>
+</html>
